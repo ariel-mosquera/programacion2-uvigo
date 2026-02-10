@@ -18,21 +18,17 @@ public class DireccionCorreo {
     }
 
     public DireccionCorreo(String nombre, String apellidos) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-
-        nombre = nombre.toLowerCase();
-        apellidos = apellidos.toLowerCase();
+        this.nombre = nombre.toLowerCase();
+        this.apellidos = apellidos.toLowerCase();
 
         String primerApellido = apellidos.split(" ")[0];
         // String segundoApellido = apellidos.split(" ")[1];
         char inicial = nombre.charAt(0);
 
-        this.usuario = inicial + primerApellido;
-        this.servidor = SERVIDOR;
+        this.usuario = primerApellido + inicial + '@' + SERVIDOR;
     }
 
-    // toString
+    //toString
     @Override
     public String toString() {
         return apellidos + ',' + nombre + ": " + usuario + '@' + servidor;
