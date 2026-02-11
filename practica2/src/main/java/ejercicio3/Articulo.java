@@ -11,13 +11,27 @@ public class Articulo {
         this.tipoIVA = tipoIVA;
     }
 
-    private double calcularPrecioFinal() {
-        return switch (tipoIVA) {
-            case GENERAL -> this.precio * (1.0 + 0.21);
-            case REDUCIDO -> this.precio * (1.0 + 0.10);
-            case SUPERREDUCIDO -> this.precio * (1.0 + 0.04);
-            case EXENTO -> this.precio;
-        };
+    /*
+     * private double calcularPrecioFinal() {
+     * return switch (tipoIVA) {
+     * case GENERAL -> this.precio * (1.0 + 0.21);
+     * case REDUCIDO -> this.precio * (1.0 + 0.10);
+     * case SUPERREDUCIDO -> this.precio * (1.0 + 0.04);
+     * case EXENTO -> this.precio;
+     * };
+     * }
+     */
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public double getPrecio() {
+        return this.precio;
+    }
+
+    public TipoIVA getTipoIVA() {
+        return this.tipoIVA;
     }
 
     @Override
@@ -26,6 +40,6 @@ public class Articulo {
         return """
                 Artículo: %s
                 Precio final: %f euros
-                """.formatted(nombre, calcularPrecioFinal());
+                """.formatted(nombre, tipoIVA.calcularPrecioFinal(precio));
     }
 }
