@@ -1,1 +1,7 @@
+#archivos del sistema operativo MacOs
+
 .DS_Store
+
+# Compilados .class
+
+*.class
