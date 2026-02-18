@@ -26,7 +26,7 @@ public class Ejercicio12 {
 
         for (int i = 0; i < matrix.length && !encontrado; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                if (matrix[i][j] == num){
+                if (matrix[i][j] == num) {
                     encontrado = true;
                     fila = i;
                     columna = j;
@@ -37,6 +37,8 @@ public class Ejercicio12 {
         if (encontrado)
             System.out.println("El elemento está en la fila " + fila + ", columna " + columna);
         else
-            
+            System.out.println("Elemento no encontrado");
+
+        teclado.close();
     }
 }
