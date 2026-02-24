@@ -41,8 +41,7 @@ public class Cuenta {
             System.out.println("Valor inválido, finalizando programa...");
             System.exit(1);
         } else {
-            setSaldo(getSaldo() - valor); // deberia imponer condiciones aqui? o la invariante de clase ya es
-                                          // suficiente?
+            setSaldo(getSaldo() - valor); /* ¿Debería trabajar solo con las condiciones de la invariante de clase? */
             saldoTotal -= valor;
         }
     }
