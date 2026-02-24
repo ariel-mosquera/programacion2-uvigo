@@ -4,26 +4,26 @@ public enum TipoIVA {
     EXENTO(0),
     SUPERREDUCIDO(0.04),
     REDUCIDO(0.1),
-    GENERAL(0.25);
+    GENERAL(0.25); // punto y coma solo es necesario cuando hay lógica encapsulada
 
-    // Atributo privado encapsulado (Estado del objeto). --> El porcentage no debe
+    // Atributo privado encapsulado (Estado del objeto). --> El porcentaje no debe
     // cambiar, private para protegerlo y final para que sea inmutable
-    private final double porcentage;
+    private final double porcentaje;
 
     // Constructor del enumerado, por defecto en java los constructores del enum son
     // privados
     // Se ejecuta una vez para cada constante del enum (EXENTO, SUPERREDUCIDO...)
-    private TipoIVA(double porcentage) {
-        this.porcentage = porcentage;
+    private TipoIVA(double porcentaje) {
+        this.porcentaje = porcentaje;
     }
 
-    // getter para acceder a la porcentage de cada enum: Mes.MES.getPorcentage()
-    public double getPorcentage() {
-        return porcentage;
+    // getter para acceder a la porcentaje de cada enum: Mes.MES.getPorcentage()
+    public double getPorcentaje() {
+        return porcentaje;
     }
 
-    double calcularPrecioFinal(double precio) {
-        return precio * (1 + this.porcentage);
+    public double calcularPrecioFinal(double precioBase) {
+        return precioBase * (1 + this.porcentaje);
     }
 
 }

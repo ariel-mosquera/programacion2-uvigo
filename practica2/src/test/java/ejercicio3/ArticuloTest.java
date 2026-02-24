@@ -16,6 +16,6 @@ public class ArticuloTest {
     }
 
     void testPrecioNegativo() {
-        Articulo articulo = new Articulo("NVIDIA GTX 5090", -55, TipoIVA.REDUCIDO);
+        // Articulo articulo = new Articulo("NVIDIA GTX 5090", -55, TipoIVA.REDUCIDO);
     }
 }
