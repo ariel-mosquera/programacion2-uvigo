@@ -4,7 +4,7 @@ public enum TipoIVA {
     EXENTO(0),
     SUPERREDUCIDO(0.04),
     REDUCIDO(0.1),
-    GENERAL(0.25); // punto y coma solo es necesario cuando hay lógica encapsulada
+    GENERAL(0.21); // punto y coma solo es necesario cuando hay lógica encapsulada
 
     // Atributo privado encapsulado (Estado del objeto). --> El porcentaje no debe
     // cambiar, private para protegerlo y final para que sea inmutable

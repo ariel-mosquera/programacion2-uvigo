@@ -1,21 +1,53 @@
 package ejercicio3;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test; // para que sepa que es un test
+import static org.junit.jupiter.api.Assertions.*; // librerias de los asserts
 
 public class ArticuloTest {
 
     @Test
 
-    void testPrecioFinal() {
-        Articulo articulo = new Articulo("RAM", 5.25, TipoIVA.GENERAL);
+    public void testCalcularPrecioIVAGeneral() {
+        double precioBase = 100.00;
+        double precioEsperado = 121.00;
+        double precioCalculado = TipoIVA.GENERAL.calcularPrecioFinal(precioBase);
 
-        var resultado = articulo.getTipoIVA().calcularPrecioFinal(articulo.getPrecio());
-
-        assertEquals(6.5625, resultado, 0.01, "El precio final deberia ser aprox. 6.5625");
+        assertEquals(precioEsperado, precioCalculado, 0.001);
     }
 
-    void testPrecioNegativo() {
-        // Articulo articulo = new Articulo("NVIDIA GTX 5090", -55, TipoIVA.REDUCIDO);
+    @Test
+
+    public void testCalcularPrecioIVASuperreducido() {
+        double precioBase = 25;
+        double precioEsperado = 26;
+        double precioCalculado = TipoIVA.SUPERREDUCIDO.calcularPrecioFinal(precioBase);
+
+        assertEquals(precioEsperado, precioCalculado, 0.001);
+    }
+
+    @Test
+
+    public void testCalcularPrecioIVAReducido() {
+        double precioBase = 50;
+        double precioEsperado = 55;
+        double precioCalculado = TipoIVA.REDUCIDO.calcularPrecioFinal(precioBase);
+
+        assertEquals(precioEsperado, precioCalculado, 0.001);
+    }
+
+    @Test
+
+    public void testCalcularPrecioIVAExento() {
+        double precioBase = 10;
+        double precioEsperado = 10;
+        double precioCalculado = TipoIVA.EXENTO.calcularPrecioFinal(precioBase);
+
+        assertEquals(precioEsperado, precioCalculado, 0.001);
+    }
+
+    @Test
+
+    public void testGetPorcentajeGeneral() {
+        assertEquals(0.21, TipoIVA.GENERAL.getPorcentaje());
     }
 }

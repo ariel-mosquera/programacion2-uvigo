@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: ejercicio3.ArticuloTest
+Test set: ejercicio5.OperacionTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ejercicio3.ArticuloTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in ejercicio5.OperacionTest
