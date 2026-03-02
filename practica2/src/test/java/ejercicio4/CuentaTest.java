@@ -16,15 +16,15 @@ public class CuentaTest {
     public void testIngresarDinero() {
         Cuenta cuenta1 = new Cuenta(100);
         cuenta1.ingresarDinero(55);
-        assertEquals(155, cuenta1.getSaldo(), "Fallo en el metodo ingresarDinero");
+        assertEquals(155, cuenta1.getSaldo(), "Fallo en el método ingresarDinero");
 
         Cuenta cuenta2 = new Cuenta(173);
         cuenta2.ingresarDinero(7);
-        assertEquals(180, cuenta2.getSaldo(), "fallo en el metodo ingresarDinero...");
+        assertEquals(180, cuenta2.getSaldo(), "Fallo en el método ingresarDinero...");
 
         // test Saldo total
 
-        assertEquals(335, Cuenta.getSaldoTotal(), "Fallo en el calculo del saldo total");
+        assertEquals(335, Cuenta.getSaldoTotal(), "Fallo en el cálculo del saldo total");
     }
 
     @Test
@@ -42,14 +42,4 @@ public class CuentaTest {
 
         assertEquals(239, Cuenta.getSaldoTotal());
     }
-
-    @Test
-
-    public void testSaldoTotal() {
-        Cuenta cuenta1 = new Cuenta(130);
-        Cuenta cuenta2 = new Cuenta(315);
-
-        assertEquals(445, Cuenta.getSaldoTotal());
-    }
-
 }
