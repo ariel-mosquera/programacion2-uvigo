@@ -6,43 +6,46 @@ public class Cuenta {
 
     public Cuenta(double saldoInicial) {
         setSaldo(saldoInicial);
-        saldoTotal += saldoInicial;
     }
 
     public double getSaldo() {
         return this.saldo;
     }
 
-    public double getSaldoTotal() {
+    public static double getSaldoTotal() {
         return saldoTotal;
     }
 
-    public void setSaldo(double saldo) {
-        if (saldo >= 0) {
-            this.saldo = saldo;
-        } else {
-            System.out.println("El saldo no puede ser negativo");
+    static void resetSaldoTotalParaTests() {
+        saldoTotal = 0;
+    }
+
+    public void setSaldo(double nuevoSaldo) {
+        if (nuevoSaldo < 0) {
+            System.out.println("Valor inválido, finalizando programa...");
             System.exit(1);
+        } else {
+            saldoTotal += (nuevoSaldo - this.saldo);
+            this.saldo = nuevoSaldo;
         }
     }
 
     public void ingresarDinero(double valor) {
-        if (valor < 0) {
-            System.out.println("Valor inválido, finalizando programa...");
-            System.exit(1);
-        } else {
+        if (valor < 0)
+            System.out.println("Valor inválido");
+        else
             setSaldo(getSaldo() + valor);
-            saldoTotal += valor;
-        }
     }
 
     public void retirarDinero(double valor) {
-        if (valor < 0) {
-            System.out.println("Valor inválido, finalizando programa...");
-            System.exit(1);
-        } else {
-            setSaldo(getSaldo() - valor); /* ¿Debería trabajar solo con las condiciones de la invariante de clase? */
-            saldoTotal -= valor;
-        }
+        if (valor < 0)
+            System.out.println("Valor inválido");
+        else
+            setSaldo(getSaldo() - valor);
+    }
+
+    @Override
+    public String toString() {
+        return "Saldo de la cuenta: " + getSaldo() + "€";
     }
 }

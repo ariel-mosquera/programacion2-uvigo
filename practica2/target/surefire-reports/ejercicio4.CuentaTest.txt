@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: ejercicio5.OperacionTest
+Test set: ejercicio4.CuentaTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in ejercicio5.OperacionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in ejercicio4.CuentaTest
