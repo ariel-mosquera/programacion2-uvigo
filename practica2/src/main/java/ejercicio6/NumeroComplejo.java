@@ -2,20 +2,37 @@ package ejercicio6;
 
 public class NumeroComplejo {
 
-    private double parteRe;
-    private double parteIm;
+    public static final NumeroComplejo UNO = new NumeroComplejo(1, 0);
+    public static final NumeroComplejo CERO = new NumeroComplejo(0, 0);
+    public static final NumeroComplejo I = new NumeroComplejo(0, 1);
+
+    // private double parteRe;
+    // private double parteIm;
+    private double[] complejo = new double[2];
 
     public NumeroComplejo(double parteRe, double parteIm) {
-        this.parteRe = parteRe;
-        this.parteIm = parteIm;
+        // this.parteRe = parteRe;
+        // this.parteIm = parteIm;
+        this.complejo[0] = parteRe;
+        this.complejo[1] = parteIm;
+    }
+
+    public static NumeroComplejo real(double valor) {
+        return new NumeroComplejo(valor, 0);
+    }
+
+    public static NumeroComplejo imaginario(double valor) {
+        return new NumeroComplejo(0, valor);
     }
 
     public double getParteRe() {
-        return parteRe;
+        // return parteRe;
+        return this.complejo[0];
     }
 
     public double getParteIm() {
-        return parteIm;
+        // return parteIm;
+        return this.complejo[1];
     }
 
     static NumeroComplejo sumarComplejos(NumeroComplejo num1, NumeroComplejo num2) {
@@ -32,12 +49,12 @@ public class NumeroComplejo {
     }
 
     double calcularValorAbsoluto() {
-        return Math.sqrt(this.parteRe * this.parteRe + this.parteIm * this.parteIm);
+        return Math.sqrt(getParteRe() * getParteRe() + getParteIm() * getParteIm());
     }
 
     @Override
     public String toString() {
-        return "(" + this.parteRe + " + " + this.parteIm + "i" + ")";
+        return "(" + getParteRe() + " + " + getParteIm() + "i" + ")";
     }
 
 }
