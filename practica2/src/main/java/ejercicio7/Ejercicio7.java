@@ -16,8 +16,8 @@ public class Ejercicio7 {
             switch (opt) {
             case 1 -> agregarDeportista(array, pos, scanner);
             case 2 -> listarDeportistas(array, pos);
-            case 3 -> ObtenerDeportista(array, pos, scanner);
-            case 4 -> ObtenerEstadísticas(array, pos);
+            case 3 -> obtenerDeportista(array, pos, scanner);
+            case 4 -> obtenerEstadisticas(array, pos);
             case 5 -> System.out.println("\nFinalizando programa...");
             default -> System.out.println("\nValor inválido");
             }
@@ -62,13 +62,13 @@ public class Ejercicio7 {
             } while (opt < 1 || opt > 6);
 
             categoria = switch (opt) {
-            case 1 -> Categoria.ALEVIN;
-            case 2 -> Categoria.BENJAMIN;
-            case 3 -> Categoria.CADETE;
-            case 4 -> Categoria.INFANTIL;
+            case 1 -> Categoria.BENJAMIN;
+            case 2 -> Categoria.ALEVIN;
+            case 3 -> Categoria.INFANTIL;
+            case 4 -> Categoria.CADETE;
             case 5 -> Categoria.JUVENIL;
             case 6 -> Categoria.SENIOR;
-            default -> Categoria.ALEVIN;
+            default -> Categoria.BENJAMIN;
             };
 
             array[i] = new Deportista(nombre, dni, categoria);
@@ -106,7 +106,7 @@ public class Ejercicio7 {
         }
     }
 
-    public static void ObtenerDeportista(Deportista[] array, int[] pos, Scanner scanner) {
+    public static void obtenerDeportista(Deportista[] array, int[] pos, Scanner scanner) {
         int indice;
 
         System.out.println("""
@@ -119,7 +119,7 @@ public class Ejercicio7 {
             System.out.print("\nIndice: ");
             indice = Integer.parseInt(scanner.nextLine());
 
-            if (indice <= 0 || indice >= pos[0])
+            if (indice <= 0 || indice >= (pos[0] + 1))
                 System.out.println("Valor inválido, no se admiten números negativos, el número cero o valores mayores que el número de elementos");
 
         } while (indice <= 0 || indice >= (pos[0] + 1));
@@ -128,7 +128,7 @@ public class Ejercicio7 {
         System.out.println(array[indice - 1]);
     }
 
-    public static void ObtenerEstadísticas(Deportista[] array, int[] pos) {
+    public static void obtenerEstadisticas(Deportista[] array, int[] pos) {
         System.out.println("""
                 \n=== Estadísticas ===
 
