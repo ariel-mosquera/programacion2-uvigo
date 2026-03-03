@@ -7,8 +7,7 @@ public class Ejercicio7 {
 
         Scanner scanner = new Scanner(System.in);
         Deportista[] array = new Deportista[10];
-        int[] pos = new int[1];
-        pos[0] = 0;
+        int[] pos = { 0 };
         var opt = 0;
 
         do {
@@ -28,16 +27,14 @@ public class Ejercicio7 {
         String dni;
         String nombre;
         Categoria categoria;
-        int opt;
 
         for (int i = pos[0]; i < array.length; i++) {
-
             System.out.println("\nDeportista [" + (i + 1) + "]");
 
             System.out.print("\nNombre (vacío para rematar): ");
-            nombre = scanner.nextLine();
+            nombre = scanner.nextLine().trim();
 
-            if (verificarNombre(nombre)) {
+            if (nombre.isEmpty()) {
                 System.out.println("Volviendo al menú...");
                 break;
             }
@@ -45,39 +42,11 @@ public class Ejercicio7 {
             System.out.print("\nDNI: ");
             dni = scanner.nextLine();
 
-            System.out.println("""
-                    \nElige una Categoria:
-
-                      (1) -> Benjamin
-                      (2) -> Alevin
-                      (3) -> Infantil
-                      (4) -> Cadete
-                      (5) -> Juvenil
-                      (6) -> Senior
-                              """);
-
-            do {
-                System.out.print("Categoria: ");
-                opt = Integer.parseInt(scanner.nextLine());
-            } while (opt < 1 || opt > 6);
-
-            categoria = switch (opt) {
-            case 1 -> Categoria.BENJAMIN;
-            case 2 -> Categoria.ALEVIN;
-            case 3 -> Categoria.INFANTIL;
-            case 4 -> Categoria.CADETE;
-            case 5 -> Categoria.JUVENIL;
-            case 6 -> Categoria.SENIOR;
-            default -> Categoria.BENJAMIN;
-            };
+            categoria = leerCategoria(scanner);
 
             array[i] = new Deportista(nombre, dni, categoria);
             pos[0]++;
         }
-    }
-
-    public static boolean verificarNombre(String nombre) {
-        return nombre.equals("");
     }
 
     public static int menu(Scanner scanner) {
@@ -134,5 +103,35 @@ public class Ejercicio7 {
 
                   Total de deportistas registrados: %d
                   Total de espacios disponibles: %d""".formatted(pos[0], (array.length - pos[0])));
+    }
+
+    public static Categoria leerCategoria(Scanner scanner) {
+        int opt;
+
+        System.out.println("""
+                \nElige una Categoria:
+
+                  (1) -> Benjamin
+                  (2) -> Alevin
+                  (3) -> Infantil
+                  (4) -> Cadete
+                  (5) -> Juvenil
+                  (6) -> Senior
+                          """);
+
+        do {
+            System.out.print("Categoria: ");
+            opt = Integer.parseInt(scanner.nextLine());
+        } while (opt < 1 || opt > 6);
+
+        return switch (opt) {
+        case 1 -> Categoria.BENJAMIN;
+        case 2 -> Categoria.ALEVIN;
+        case 3 -> Categoria.INFANTIL;
+        case 4 -> Categoria.CADETE;
+        case 5 -> Categoria.JUVENIL;
+        case 6 -> Categoria.SENIOR;
+        default -> Categoria.BENJAMIN;
+        };
     }
 }
