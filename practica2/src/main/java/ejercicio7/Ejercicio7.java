@@ -3,25 +3,6 @@ package ejercicio7;
 import java.util.Scanner;
 
 public class Ejercicio7 {
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        Deportista[] array = new Deportista[10];
-        int[] pos = { 0 };
-        var opt = 0;
-
-        do {
-            opt = menu(scanner);
-            switch (opt) {
-            case 1 -> agregarDeportista(array, pos, scanner);
-            case 2 -> listarDeportistas(array, pos);
-            case 3 -> obtenerDeportista(array, pos, scanner);
-            case 4 -> obtenerEstadisticas(array, pos);
-            case 5 -> System.out.println("\nFinalizando programa...");
-            default -> System.out.println("\nValor inválido");
-            }
-        } while (opt != 5);
-    }
 
     public static void agregarDeportista(Deportista[] array, int[] pos, Scanner scanner) {
         String dni;
@@ -51,14 +32,14 @@ public class Ejercicio7 {
 
     public static int menu(Scanner scanner) {
         System.out.println("""
-                \n=== Menú ===
+                    \n=== Menú ===
 
-                 (1) -> Agregar deportistas
-                 (2) -> Listar deportistas
-                 (3) -> Obtener deportista
-                 (4) -> Estadísticas
-                 (5) -> Salir
-                 """);
+                    (1) -> Agregar deportistas
+                    (2) -> Listar deportistas
+                    (3) -> Obtener deportista
+                    (4) -> Estadísticas
+                    (5) -> Salir
+                """);
         System.out.print("Opcion: ");
         return Integer.parseInt(scanner.nextLine());
     }
@@ -81,8 +62,8 @@ public class Ejercicio7 {
         System.out.println("""
                 \n=== Buscar deportista ===
 
-                  A continuación introduce el indice del deportista buscado,
-                  actualmente están registrados un total de %d deportistas""".formatted(pos[0]));
+                A continuación introduce el indice del deportista buscado,
+                actualmente están registrados un total de %d deportistas""".formatted(pos[0]));
 
         do {
             System.out.print("\nIndice: ");
@@ -101,23 +82,23 @@ public class Ejercicio7 {
         System.out.println("""
                 \n=== Estadísticas ===
 
-                  Total de deportistas registrados: %d
-                  Total de espacios disponibles: %d""".formatted(pos[0], (array.length - pos[0])));
+                Total de deportistas registrados: %d
+                Total de espacios disponibles: %d""".formatted(pos[0], (array.length - pos[0])));
     }
 
     public static Categoria leerCategoria(Scanner scanner) {
         int opt;
 
         System.out.println("""
-                \nElige una Categoria:
+                    \nElige una Categoria:
 
-                  (1) -> Benjamin
-                  (2) -> Alevin
-                  (3) -> Infantil
-                  (4) -> Cadete
-                  (5) -> Juvenil
-                  (6) -> Senior
-                          """);
+                    (1) -> Benjamin
+                    (2) -> Alevin
+                    (3) -> Infantil
+                    (4) -> Cadete
+                    (5) -> Juvenil
+                    (6) -> Senior
+                """);
 
         do {
             System.out.print("Categoria: ");
@@ -133,5 +114,25 @@ public class Ejercicio7 {
         case 6 -> Categoria.SENIOR;
         default -> Categoria.BENJAMIN;
         };
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Deportista[] array = new Deportista[10];
+        int[] pos = { 0 };
+        var opt = 0;
+
+        do {
+            opt = menu(scanner);
+            switch (opt) {
+            case 1 -> agregarDeportista(array, pos, scanner);
+            case 2 -> listarDeportistas(array, pos);
+            case 3 -> obtenerDeportista(array, pos, scanner);
+            case 4 -> obtenerEstadisticas(array, pos);
+            case 5 -> System.out.println("\nFinalizando programa...");
+            default -> System.out.println("\nValor inválido");
+            }
+        } while (opt != 5);
     }
 }
