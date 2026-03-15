@@ -1,26 +1,22 @@
 package ejercicio2;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Scanner;
 
 class OperadorFichero {
     private Path fichero;
 
-    public OperadorFichero(Path fichero) throws FileNotFoundException {
-        // TODO: Controlemos aqui si el fichero no existe
+    public OperadorFichero(Path fichero) throws IllegalArgumentException {
+        if (!Files.exists(fichero))
+            throw new IllegalArgumentException();
+
         this.fichero = fichero;
     }
 
     public String leerFichero() throws IOException {
-        try {
-            return new String(Files.readAllBytes(this.fichero));
-        } catch (IOException e) {
-            System.out.println("Error");
-        }
+        return new String(Files.readAllBytes(this.fichero));
     }
 
     public void añadirTexto(String texto) throws IOException {
