@@ -35,17 +35,17 @@ public class NumeroComplejo {
         return this.complejo[1];
     }
 
-    static NumeroComplejo sumarComplejos(NumeroComplejo num1, NumeroComplejo num2) {
-        double sumaReales = num1.getParteRe() + num2.getParteRe();
-        double sumaImagin = num1.getParteIm() + num2.getParteIm();
+    public NumeroComplejo sumar(NumeroComplejo otro) {
+        double sumaReales = this.getParteRe() + otro.getParteRe();
+        double sumaImagin = this.getParteIm() + otro.getParteIm();
 
         NumeroComplejo result = new NumeroComplejo(sumaReales, sumaImagin);
 
         return result;
     }
 
-    static NumeroComplejo multiplicarPorReal(NumeroComplejo complejo, double real) {
-        return new NumeroComplejo(complejo.getParteRe() * real, complejo.getParteIm() * real);
+    public NumeroComplejo multiplicarPorReal(double real) {
+        return new NumeroComplejo(this.getParteRe() * real, this.getParteIm() * real);
     }
 
     double calcularValorAbsoluto() {

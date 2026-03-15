@@ -11,7 +11,7 @@ public class NumeroComplejoTest {
         NumeroComplejo num1 = new NumeroComplejo(1, 1);
         NumeroComplejo num2 = new NumeroComplejo(3, 4);
         NumeroComplejo esperado = new NumeroComplejo(4, 5);
-        NumeroComplejo calculado = NumeroComplejo.sumarComplejos(num1, num2);
+        NumeroComplejo calculado = num1.sumar(num2);
 
         assertEquals(esperado.getParteRe(), calculado.getParteRe());
         assertEquals(esperado.getParteIm(), calculado.getParteIm());
@@ -22,7 +22,7 @@ public class NumeroComplejoTest {
     public void testMultiplicarPorReal() {
         NumeroComplejo complejo = new NumeroComplejo(5, 7);
         NumeroComplejo esperado = new NumeroComplejo(10, 14);
-        NumeroComplejo calculado = NumeroComplejo.multiplicarPorReal(complejo, 2);
+        NumeroComplejo calculado = complejo.multiplicarPorReal(2);
 
         assertEquals(esperado.getParteRe(), calculado.getParteRe());
         assertEquals(esperado.getParteIm(), calculado.getParteIm());
@@ -37,7 +37,7 @@ public class NumeroComplejoTest {
 
         assertEquals(esperado, calculado);
 
-        complejo = NumeroComplejo.multiplicarPorReal(complejo, -1);
+        complejo = complejo.multiplicarPorReal(-1);
         assertEquals(5.00, complejo.calcularValorAbsoluto());
     }
 
