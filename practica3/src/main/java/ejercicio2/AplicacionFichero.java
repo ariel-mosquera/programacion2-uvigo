@@ -1,34 +1,38 @@
 package ejercicio2;
 
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
 public class AplicacionFichero {
     public static void main(String[] args) {
-        System.out.println("Indica la ruta al fichero a operar: ");
+
         Scanner entrada = new Scanner(System.in);
-        String rutaFichero = entrada.nextLine();
-
-        Path fichero = Path.of(rutaFichero);
+        boolean ficheroValido = false;
+        String rutaFichero = null;
+        Path fichero = null;
         OperadorFichero operadorFichero = null;
-
-        while (operadorFichero == null) {
-            try {
-                operadorFichero = new OperadorFichero(fichero);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-
-        System.out.println("Contenidos del fichero: " + fichero);
-
         try {
+            do {
+                System.out.println("Indica la ruta al fichero a operar: ");
+                rutaFichero = entrada.nextLine();
+                fichero = Path.of(rutaFichero);
+
+                try {
+                    operadorFichero = new OperadorFichero(fichero);
+                    ficheroValido = true;
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Dirección inválida vuelve a intentarlo...");
+                }
+
+            } while (!ficheroValido);
+
+            System.out.println("Contenidos del fichero: " + fichero);
             System.out.println(operadorFichero.leerFichero());
-        } catch (IOException e) {
-            System.out.println("No se pudo abrir el fichero");
 
             String linea = null;
+
             do {
                 System.out.println("Añadamos una línea al fichero (linea vacía si quieres terminar): ");
                 linea = entrada.nextLine().trim();
@@ -41,15 +45,16 @@ public class AplicacionFichero {
             } while (linea.length() > 0);
 
             System.out.println("Contenidos del fichero: " + fichero);
-            System.out.println(operadorFichero.leerFichero());
 
+            System.out.println(operadorFichero.leerFichero());
         } catch (AccessDeniedException e) {
-            System.out.println("No tienes acceso al fichero");
+            System.err.println("Acceso al archivo fue negado");
         } catch (IOException e) {
-            System.out.println("Ha surgido un error en el fichero");
+            System.err.println("Error al acceder el fichero, error de entrada/salida... " + e.getMessage());
         } finally {
-            System.out.println("Que tengas un buen día");
             entrada.close();
+            System.out.println("Que tengas un buen día");
         }
+
     }
 }

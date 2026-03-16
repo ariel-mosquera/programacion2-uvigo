@@ -1,17 +1,16 @@
 package ejercicio2;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.io.IOException;
 
 class OperadorFichero {
     private Path fichero;
 
     public OperadorFichero(Path fichero) throws IllegalArgumentException {
         if (!Files.exists(fichero))
-            throw new IllegalArgumentException();
-
+            throw new IllegalArgumentException("Archivo no encontrado o no existe");
         this.fichero = fichero;
     }
 
