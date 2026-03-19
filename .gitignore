@@ -5,3 +5,8 @@
 # Compilados .class
 
 *.class
+
+#Carpetas de IDE
+
+.vscode
+.idea
