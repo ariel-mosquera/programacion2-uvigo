@@ -1,12 +1,39 @@
-#archivos del sistema operativo MacOs
-
+# OS files
 .DS_Store
+Thumbs.db
 
-# Compilados .class
-
+# Java compiled classes
 *.class
 
-#Carpetas de IDE
+# Maven build output (applies to all modules)
+target/
 
-.vscode
-.idea
+# Maven release/versions plugin and temp files
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Test and coverage reports
+surefire-reports/
+failsafe-reports/
+jacoco.exec
+jacoco/
+
+# Logs
+*.log
+
+# IDE folders/files
+.vscode/
+.idea/
+*.iml
+out/
+
+# Temporary editor files
+*.swp
+*.swo
+*~
