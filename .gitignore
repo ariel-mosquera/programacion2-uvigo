@@ -2,10 +2,11 @@
 .DS_Store
 Thumbs.db
 
-# Java compiled classes
+#compiled files that may appear out of target/
+
 *.class
 
-# Maven build output (applies to all modules)
+# Maven build output (covers compiled classes, test reports, coverage data)
 target/
 
 # Maven release/versions plugin and temp files
@@ -17,12 +18,6 @@ pom.xml.next
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-
-# Test and coverage reports
-surefire-reports/
-failsafe-reports/
-jacoco.exec
-jacoco/
 
 # Logs
 *.log
