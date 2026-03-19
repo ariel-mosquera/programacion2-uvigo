@@ -16,6 +16,7 @@ class PrendaTest {
     @Test
     void prendaBasicaTest() {
         Prenda prenda = Prenda.prendaBasica("chaqueta");
-        assertEquals(false, prenda.esCara());
+        // assertEquals(false, prenda.esCara());
+        assertFalse(prenda.esCara());
     }
 }
