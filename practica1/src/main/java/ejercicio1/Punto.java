@@ -6,14 +6,14 @@ public class Punto {
     double x;
     double y;
 
-    //constructor
+    // constructor
     Punto(double x, double y) {
-        this.x = x; // this -> para referenciar a la variable local
+        this.x = x; // this -> para referenciar al atributo de la clase con mismo del argumento
         this.y = y;
     }
 
     double distanciaOrigen() {
-        return Math.sqrt(x*x + y*y); // Math -> libreria de java que contiene operaciones matematicas
+        return Math.sqrt(x * x + y * y); // Math -> libreria de java que contiene operaciones matematicas
     }
 
     // toString
