@@ -19,16 +19,16 @@ public class Reunion {
         return meetingTopic;
     }
 
-    public void setMeetingTopic(String asunto) {
-        this.meetingTopic = asunto;
+    public void setMeetingTopic(String newMeetingTopic) {
+        this.meetingTopic = newMeetingTopic;
     }
 
     public String getPlace() {
         return place;
     }
 
-    public void setPlace(String lugar) {
-        this.place = lugar;
+    public void setPlace(String newPlace) {
+        this.place = newPlace;
     }
 
     public Date getDate() {
