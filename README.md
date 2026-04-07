@@ -1,51 +1,104 @@
-# programacion2-uvigo
-Ejercicios de la asignatura de programacion 2
+# 📚 Programación 2 — UVigo
 
-## Resumen de Prácticas
+> Repositorio de ejercicios y prácticas de la asignatura **Programación 2** de la Universidad de Vigo.
 
-### Práctica 0: Sintaxis Java Procedural
-Introducción a la sintaxis básica de Java con enfoque procedural. Ejercicios sobre:
-- Operaciones aritméticas básicas (suma, resta, multiplicación, división)
-- Estructuras de control (if, switch, bucles)
-- Funciones y métodos estáticos
-- Fundamentos de programación estructurada
+![Java](https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk&logoColor=white)
+![Maven](https://img.shields.io/badge/Build-Maven-blue?logo=apachemaven&logoColor=white)
+![JUnit](https://img.shields.io/badge/Testing-JUnit5-green?logo=junit5&logoColor=white)
+![License](https://img.shields.io/github/license/ariel-mosquera/programacion2-uvigo)
 
-### Práctica 1: Introducción a la Programación Orientada a Objetos
-Conceptos básicos de POO en Java:
-- Creación de clases y objetos
-- Atributos y métodos
-- Constructores
-- Encapsulación
-- Ejemplos: DireccionCorreo, Libro, Calculator
-- Primeras pruebas unitarias (JUnit)
+---
 
-### Práctica 2: Enumeraciones y Testing
-Profundización en estructuras de datos y pruebas:
-- Uso de enumeraciones (enum)
-- Operaciones con enums (switch expressions)
-- Testing exhaustivo con JUnit
-- Ejemplos: Operacion, Articulo, Cuenta, NumeroComplejo
-- Desarrollo guiado por pruebas (TDD)
+## 📋 Tabla de Contenidos
 
-### Práctica 3: Manejo de Ficheros y Excepciones
-Trabajo con archivos y gestión de errores:
-- Lectura y escritura de ficheros (java.nio.file)
-- Manejo de excepciones (try-catch, throws)
-- Validación de rutas y permisos
-- Ejemplos: OperadorFichero, AplicacionFichero
-- Testing con ficheros
+- [Práctica 0 — Sintaxis Java Procedural](#-práctica-0--sintaxis-java-procedural)
+- [Práctica 1 — Introducción a la POO](#-práctica-1--introducción-a-la-poo)
+- [Práctica 2 — Enumeraciones y Testing](#-práctica-2--enumeraciones-y-testing)
+- [Práctica 3 — Manejo de Ficheros y Excepciones](#-práctica-3--manejo-de-ficheros-y-excepciones)
+- [Práctica 4_1 — Composición y Relaciones entre Clases](#-práctica-41--composición-y-relaciones-entre-clases)
+- [Parcial 1 — Evaluación Integral](#-parcial-1--evaluación-integral)
 
-### Práctica 4_1: Composición y Relaciones entre Clases
-Relaciones avanzadas entre objetos:
-- Composición fuerte entre clases
-- Gestión de fechas y horas
-- Clases relacionadas (Date, Hour, Reunion)
-- Modelado de sistemas más complejos
+---
 
-### Parcial 1: Evaluación Integral
-Examen que integra los conceptos aprendidos:
-- Clases y objetos (Prenda, TipoCuenta)
-- Enumeraciones
-- Manejo de ficheros (OperadorFichero)
-- Clientes y operaciones
-- Testing completo
+## 🧱 Práctica 0 — Sintaxis Java Procedural
+
+Introducción a la sintaxis básica de Java con enfoque procedural.
+
+| Tema | Detalle |
+|------|---------|
+| ➕ Aritmética | Suma, resta, multiplicación, división |
+| 🔀 Control de flujo | `if`, `switch`, bucles |
+| 🔧 Métodos | Funciones y métodos estáticos |
+| 🗂️ Fundamentos | Programación estructurada |
+
+---
+
+## 🏗️ Práctica 1 — Introducción a la POO
+
+Conceptos básicos de Programación Orientada a Objetos en Java.
+
+| Tema | Detalle |
+|------|---------|
+| 🧩 Clases y objetos | Creación e instanciación |
+| 🔒 Encapsulación | Atributos, métodos, constructores |
+| 💡 Ejemplos | `DireccionCorreo`, `Libro`, `Calculator` |
+| 🧪 Testing | Primeras pruebas unitarias con JUnit |
+
+---
+
+## 🔢 Práctica 2 — Enumeraciones y Testing
+
+Profundización en estructuras de datos y pruebas.
+
+| Tema | Detalle |
+|------|---------|
+| 📦 Enumeraciones | Uso de `enum` y `switch` expressions |
+| 🧪 Testing exhaustivo | JUnit con cobertura amplia |
+| 💡 Ejemplos | `Operacion`, `Articulo`, `Cuenta`, `NumeroComplejo` |
+| 🔄 TDD | Desarrollo guiado por pruebas |
+
+---
+
+## 📂 Práctica 3 — Manejo de Ficheros y Excepciones
+
+Trabajo con archivos y gestión de errores.
+
+| Tema | Detalle |
+|------|---------|
+| 📖 Lectura/Escritura | `java.nio.file` |
+| ⚠️ Excepciones | `try-catch`, `throws` |
+| ✅ Validación | Rutas y permisos |
+| 💡 Ejemplos | `OperadorFichero`, `AplicacionFichero` |
+
+---
+
+## 🔗 Práctica 4_1 — Composición y Relaciones entre Clases
+
+Relaciones avanzadas entre objetos.
+
+| Tema | Detalle |
+|------|---------|
+| 🏛️ Composición | Relaciones fuertes entre clases |
+| 🕐 Fechas y horas | Gestión con `Date` y `Hour` |
+| 💡 Ejemplos | `Date`, `Hour`, `Reunion` |
+| 🧩 Modelado | Sistemas orientados a objetos complejos |
+
+---
+
+## 📝 Parcial 1 — Evaluación Integral
+
+Examen integrador de los conceptos aprendidos.
+
+| Tema | Detalle |
+|------|---------|
+| 🧩 Clases y objetos | `Prenda`, `TipoCuenta` |
+| 📦 Enumeraciones | Tipos y operaciones |
+| 📂 Ficheros | `OperadorFichero` |
+| 👤 Clientes | Clientes y operaciones bancarias |
+| 🧪 Testing | Cobertura completa |
+
+---
+
+<div align="center">
+  <sub>Hecho con ☕ Java · Universidad de Vigo</sub>
+</div>
