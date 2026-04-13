@@ -5,7 +5,7 @@ public class Date {
     private final int month;
     private final int year;
 
-    Date(int day, int month, int year) {
+    public Date(int day, int month, int year) {
         if (year < 0)
             throw new IllegalArgumentException();
 

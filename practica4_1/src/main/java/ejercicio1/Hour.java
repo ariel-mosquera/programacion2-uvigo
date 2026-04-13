@@ -4,7 +4,7 @@ public class Hour {
     private final int hour;
     private final int minuts;
 
-    Hour(int hour, int minuts) throws IllegalArgumentException {
+    public Hour(int hour, int minuts) throws IllegalArgumentException {
         if (hour < 0 || hour > 23 || minuts < 0 || minuts > 59)
             throw new IllegalArgumentException();
 
