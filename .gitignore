@@ -32,3 +32,6 @@ out/
 *.swp
 *.swo
 *~
+
+#github copilot files
+.github/
