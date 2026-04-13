@@ -6,8 +6,11 @@ public class Reunion {
     private Date date;
     private Hour hour;
 
-    // Composición fuerte, se pasan los atributos de Date y Hour por el constructor
-    // de Reunion
+    /*
+     * Composición fuerte, se pasan los atributos de Date y Hour por el constructor
+     * de Reunion
+     */
+
     public Reunion(String meetingTopic, String place, int day, int month, int year, int hour, int minuts) {
         this.meetingTopic = meetingTopic;
         this.place = place;

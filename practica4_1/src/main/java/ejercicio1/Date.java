@@ -37,10 +37,10 @@ public class Date {
 
     private int getDaysInMonth(int month, int year) {
         return switch (month) {
-            case 1, 3, 5, 7, 8, 10, 12 -> 31;
-            case 4, 6, 9, 11 -> 30;
-            case 2 -> isLeapYear(year) ? 29 : 28;
-            default -> throw new IllegalArgumentException("Mes inválido: " + month);
+        case 1, 3, 5, 7, 8, 10, 12 -> 31;
+        case 4, 6, 9, 11 -> 30;
+        case 2 -> isLeapYear(year) ? 29 : 28;
+        default -> throw new IllegalArgumentException("Mes inválido: " + month);
         };
     }
 }
