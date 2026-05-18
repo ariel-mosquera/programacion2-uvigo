@@ -17,7 +17,7 @@ public class Autor {
         return orcid;
     }
 
-    public String getNombrere() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -28,5 +28,4 @@ public class Autor {
     public String getInstitucion() {
         return institucion;
     }
-
 }
