@@ -14,8 +14,8 @@ public class SalidaFichero implements Salida {
 
     @Override
     public void escribir(String texto) throws IOException {
-        PrintWriter pw = new PrintWriter(this.fichero);
-        pw.println(texto);
-        pw.close();
+        try (PrintWriter pw = new PrintWriter(this.fichero)) {
+            pw.println(texto);
+        }
     }
 }
