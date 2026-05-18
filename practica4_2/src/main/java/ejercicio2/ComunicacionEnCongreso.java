@@ -1,12 +1,16 @@
-package ejercicio1;
+package ejercicio2;
+
+import ejercicio1.Autor;
 
 public class ComunicacionEnCongreso extends Publicacion {
     private final String nombreCongreso;
     private final String ciudad;
     private final String pais;
 
-    public ComunicacionEnCongreso(String nombre, int anho, String nombreCongreso, String ciudad, String pais) {
-        super(nombre, anho);
+    public ComunicacionEnCongreso(Autor autor, String titulo, int anho, int numCitas, String nombreCongreso,
+            String ciudad,
+            String pais) {
+        super(autor, titulo, anho, numCitas);
         this.nombreCongreso = nombreCongreso;
         this.ciudad = ciudad;
         this.pais = pais;

@@ -1,4 +1,6 @@
-package ejercicio1;
+package ejercicio2;
+
+import ejercicio1.Autor;
 
 public class Articulo extends Publicacion {
     private final String nombreRevista;
@@ -6,8 +8,11 @@ public class Articulo extends Publicacion {
     private final int paginaInicial;
     private final int paginaFinal;
 
-    public Articulo(String nombre, int anho, String nombreRevista, int volumen, int paginaInicial, int paginaFinal) {
-        super(nombre, anho);
+    public Articulo(Autor autor, String titulo, int anho, int numCitas, String nombreRevista, int volumen, int paginaInicial, int paginaFinal) {
+        if (paginaInicial < 0 || paginaFinal < paginaInicial)
+            throw new InvalidPageException("Página inválida");
+
+        super(autor, titulo, anho, numCitas);
         this.nombreRevista = nombreRevista;
         this.volumen = volumen;
         this.paginaInicial = paginaInicial;

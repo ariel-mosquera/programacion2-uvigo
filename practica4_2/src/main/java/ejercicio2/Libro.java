@@ -1,11 +1,13 @@
-package ejercicio1;
+package ejercicio2;
+
+import ejercicio1.Autor;
 
 public class Libro extends Publicacion {
     private final String editorial;
     private final String lugar;
 
-    public Libro(String nombre, int anho, String editorial, String lugar) {
-        super(nombre, anho);
+    public Libro(Autor autor, String titulo, int anho, int numCitas, String editorial, String lugar) {
+        super(autor, titulo, anho, numCitas);
         this.editorial = editorial;
         this.lugar = lugar;
     }
@@ -21,10 +23,12 @@ public class Libro extends Publicacion {
     @Override
     public String toString() {
         return """
-                Nombre: %s
+                Primer autor: %s
+                Titulo: %s
                 Anho: %d
+                Citas: %d
                 Editorial: %s
                 Lugar: %s
-                 """.formatted(super.getNombre(), super.getAnho(), this.getEditorial(), this.getLugar());
+                 """.formatted(super.getPrimerAutor().getNombre(), super.getTitulo(), super.getAnho(), super.getNumCitas(), this.getEditorial(), this.getLugar());
     }
 }
