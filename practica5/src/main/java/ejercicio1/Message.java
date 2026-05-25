@@ -1,20 +1,22 @@
 package ejercicio1;
 
-public class Message {
+public abstract class Message {
 
-        private NotificationType tipo;
-        private String texto;
+        // private NotificationType type;
+        private String text;
 
-        public Message(NotificationType tipo, String texto) {
-                this.tipo = tipo;
-                this.texto = texto;
+        public Message(String text) {
+                // this.type = type;
+                this.text = text;
         }
 
-        public NotificationType getTipo() {
-                return tipo;
+        // public NotificationType getType() {
+        // return type;
+        // }
+
+        public String getText() {
+                return text;
         }
 
-        public String getTexto() {
-                return texto;
-        }
+        abstract void send();
 }
