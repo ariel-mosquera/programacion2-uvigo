@@ -17,7 +17,7 @@ public class Programa {
         int tamanhoOperaciones = operaciones.size();
         boolean valido = true;
 
-        while (opcion != tamanhoOperaciones || valido) {
+        while (opcion != tamanhoOperaciones && valido) {
             System.out.println("\n=== Menú ===\n");
 
             for (Operacion operacion : operaciones)
